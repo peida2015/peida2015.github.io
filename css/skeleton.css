@@ -73,7 +73,10 @@
   margin: auto;
   overflow: hidden;
   border-radius: 100px;
-  animation: roll-in 1s linear, jump 0.1s ease-in-out 1s;
+  -webkit-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
+     -moz-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
+       -o-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
+          animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
 }
 .frame:hover:before {
   background: rgba(0, 255, 107, 0.73);
@@ -91,24 +94,36 @@ img.arrow {
    width: 30px;
 }
 .typed {
-  /*content: attr(value);*/
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
-  /*margin: 0 auto;*/
   display: inline-block;
-  animation: typed 4s steps(40,end);
+  -webkit-animation:  typed 4s steps(40,end);
+     -moz-animation:  typed 4s steps(40,end);
+       -o-animation:  typed 4s steps(40,end);
+          animation:  typed 4s steps(40,end);
 }
 .typed:after {
   content: "|";
   display: inline-block;
-  /*position: absolute;*/
   opacity: 0;
-  /*color:red;*/
-  animation-name: disappear;
-  animation-delay: 2s;
-  animation-duration: 1s;
-  animation-iteration-count: 3;
+
+  -webkit-animation-name: disappear;
+     -moz-animation-name: disappear;
+       -o-animation-name: disappear;
+          animation-name: disappear;
+  -webkit-animation-delay: 2s;
+     -moz-animation-delay: 2s;
+       -o-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: 3;
+     -moz-animation-iteration-count: 3;
+       -o-animation-iteration-count: 3;
+          animation-iteration-count: 3;
 }
 
 /* For devices larger than 400px */
@@ -514,6 +529,14 @@ there.
   From {left:-75%; opacity: 0; -webkit-transform: scale(0.5,0.5);}
   to {left: 0%; opacity: 1; -webkit-transform: rotate(3600deg);-webkit-transform: scale(1,1);}
 }
+@-moz-@keyframes roll-in {
+  from {left:-75%; -moz-transform: scale(0.1, 0.1) rotate(0deg)}
+  to {left: 0%; -moz-transform: scale(1,1) rotate(3600deg);}
+}
+@-o-@keyframes roll-in {
+  from {left:-75%; -o-transform: scale(0.1, 0.1) rotate(0deg)}
+  to {left: 0%; -o-transform: scale(1,1) rotate(3600deg);}
+}
 @keyframes roll-in {
   from {left:-75%; transform: scale(0.1, 0.1) rotate(0deg)}
   to {left: 0%; transform: scale(1,1) rotate(3600deg);}
@@ -524,20 +547,44 @@ there.
   50% {top: -20px;}
   100% {top: 0px;}
 }
+@-moz-@keyframes jump {
+  0% {top: 0px}
+  50% {top: -20px;}
+  100% {top: 0px;}
+}
+@-o-@keyframes jump {
+  0% {top: 0px}
+  50% {top: -20px;}
+  100% {top: 0px;}
+}
 @keyframes jump {
   0% {top: 0px}
   50% {top: -20px;}
   100% {top: 0px;}
 }
+
 @webkit-keyframes typed {
-  from {width:0}
-  /*50% {content: attr(alt[4])}*/
-  /*to {content: attr(alt)}*/
+  from { width:0px }
+}
+@-moz-@keyframes typed {
+  from { width:0px }
+}
+@-o-@keyframes typed {
+  from { width:0px }
 }
 @keyframes typed {
-  from { width:0 }
+  from { width:0px }
 }
+
 @webkit-keyframes disappear {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-moz-@keyframes disappear {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-o-@keyframes disappear {
   from { opacity: 1; }
   to { opacity: 0; }
 }
