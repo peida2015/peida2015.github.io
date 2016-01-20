@@ -47,6 +47,7 @@
 }
 .bottom-filler {
   position: absolute;
+  /*height 100%;*/
   bottom: 0px;
 }
 .bottom.arrow {
@@ -91,7 +92,7 @@ img.screenshot {
   max-width: 500px;
 }
 img.arrow {
-   width: 30px;
+   width: 20px;
 }
 .typed {
   overflow: hidden;
@@ -252,7 +253,9 @@ p {
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
-  color: #1EAEDB; }
+  color: #1EAEDB;
+  padding-left: 30px;
+}
 a:hover {
   color: #0FA0CE; }
 
