@@ -526,7 +526,7 @@ there.
 @media (min-width: 1200px) {}
 
 
-@import url(//fonts.googleapis.com/css?family=Slabo+27px|Droid+Sans');
+@import url('//fonts.googleapis.com/css?family=Slabo+27px|Droid+Sans');
 
 @webkit-keyframes roll-in {
   From {left:-75%; opacity: 0; -webkit-transform: scale(0.5,0.5);}
