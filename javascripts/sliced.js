@@ -30,6 +30,19 @@
       _tiles.tiles = tiles;
       tiles.scatterTiles();
       tiles.slowlyReturnToShape();
+      // debugger
+      setTimeout(function () {
+        tiles.tiles.remove();
+        d3.select('.frame')
+          .append('div')
+          .classed('tile', true)
+          .transition().duration(1000)
+          .style({
+            height: "200px",
+            width: "200px",
+            "border-radius": "100px"
+          })
+      }, 5000);
     }
   }
 
