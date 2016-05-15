@@ -13,7 +13,7 @@
 
       this.tiles.each(function () {
         var tile = this;
-        d3.select(".image").append(function () {
+        d3.select(".frame").append(function () {
           return tile;
         });
       });
@@ -30,7 +30,7 @@
       this.tiles[0].sort(function (a,b) {
         return a.__data__.id - b.__data__.id
       }).forEach(function (el) {
-        return d3.select(".image").append(function () {
+        return d3.select(".frame").append(function () {
           return el;
         });
       })
@@ -76,7 +76,7 @@
           if (d.id === counter && d.id <= itpl(t)) {
             counter++;
             var that = this;
-            d3.select(".image").append(function () {
+            d3.select(".frame").append(function () {
               return that;
             });
           }
@@ -128,6 +128,33 @@
 
     removeBorder: function () {
       this.tiles.style({ border: "0px" });
+    },
+
+    playIntroAnimation: function () {
+      d3.select('.tile').remove();
+      var frame = d3.select('.frame');
+      var frameParent = frame.node().parentNode;
+      frameParent.replaceChild(frame.node(), frame.node());
+
+      this.unscrambleTiles();
+      this.scatterTiles();
+      this.slowlyReturnToShape();
+      var typed = d3.select('.typed');
+      var typedParent = typed.node().parentNode;
+      typedParent.replaceChild(typed.node(), typed.node());
+
+      setTimeout(function () {
+        this.remove();
+        d3.select('.frame')
+          .append('div')
+          .classed('tile', true)
+          .transition().duration(1000)
+          .style({
+            height: "200px",
+            width: "200px",
+            "border-radius": "100px"
+          })
+      }.bind(this.tiles), 2000);
     }
   }
 })();

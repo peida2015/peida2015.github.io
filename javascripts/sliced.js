@@ -28,21 +28,9 @@
       tiles = new _tiles.Tiles(tiles);
 
       _tiles.tiles = tiles;
-      tiles.scatterTiles();
-      tiles.slowlyReturnToShape();
       // debugger
-      setTimeout(function () {
-        tiles.tiles.remove();
-        d3.select('.frame')
-          .append('div')
-          .classed('tile', true)
-          .transition().duration(1000)
-          .style({
-            height: "200px",
-            width: "200px",
-            "border-radius": "100px"
-          })
-      }, 2000);
+      tiles.playIntroAnimation();
+      document.querySelector('.like').addEventListener('click', tiles.playIntroAnimation.bind(tiles), false);
     }
   }
 
