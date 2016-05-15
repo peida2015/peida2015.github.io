@@ -68,25 +68,15 @@
   height: auto;
 }
 .frame{
-  position:relative;
-  width: 200px;
-  height: 200px;
+  /*position:relative;*/
   margin: auto;
-  overflow: hidden;
-  border-radius: 100px;
   -webkit-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
      -moz-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
        -o-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
           animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
 }
-.frame:hover:before {
-  background: rgba(0, 255, 107, 0.73);
-  color: white;
-  content: attr(alt);
-  position: absolute;
-  bottom: -20%;
-  padding: 10px;
-  border-radius: 20px
+img.portrait {
+  display: none;
 }
 img.screenshot {
   max-width: 500px;
@@ -94,16 +84,27 @@ img.screenshot {
 img.arrow {
    width: 20px;
 }
+
+div.tile {
+  display: inline-block;
+  background-image: url('../images/PeiDaKuo.jpg');
+  margin-top: -7px;
+  background-repeat: no-repeat;
+}
+
 .typed {
   overflow: hidden;
   white-space: nowrap;
   width: 100%;
+  visibility: hidden;
   display: inline-block;
-  -webkit-animation:  typed 4s steps(40,end);
-     -moz-animation:  typed 4s steps(40,end);
-       -o-animation:  typed 4s steps(40,end);
-          animation:  typed 4s steps(40,end);
+  -webkit-animation:  typed 2s steps(40,end) 2s forwards;
+     -moz-animation:  typed 2s steps(40,end) 2s forwards;
+       -o-animation:  typed 2s steps(40,end) 2s forwards;
+          animation:  typed 2s steps(40,end) 2s forwards;
 }
+
+/*blinking cursor for the typing animation*/
 .typed:after {
   content: "|";
   display: inline-block;
@@ -113,10 +114,10 @@ img.arrow {
      -moz-animation-name: disappear;
        -o-animation-name: disappear;
           animation-name: disappear;
-  -webkit-animation-delay: 2s;
-     -moz-animation-delay: 2s;
-       -o-animation-delay: 2s;
-          animation-delay: 2s;
+  -webkit-animation-delay: 4s;
+     -moz-animation-delay: 4s;
+       -o-animation-delay: 4s;
+          animation-delay: 4s;
   -webkit-animation-duration: 1s;
      -moz-animation-duration: 1s;
        -o-animation-duration: 1s;
@@ -567,18 +568,23 @@ there.
 }
 
 @webkit-keyframes typed {
-  from { width:0px }
+  from { width:0px; visibility: hidden; }
+  to { width:690px; visibility: visible; }
 }
 @-moz-@keyframes typed {
-  from { width:0px }
+  from { width:0px; visibility: hidden; }
+  to { width:690px; visibility: visible; }
 }
 @-o-@keyframes typed {
-  from { width:0px }
+  from { width:0px; visibility: hidden; }
+  to { width:690px; visibility: visible; }
 }
 @keyframes typed {
-  from { width:0px }
+  from { width:0px; visibility: hidden; }
+  to { width:690px; visibility: visible; }
 }
 
+/* produce blinking effect for the cursor */
 @webkit-keyframes disappear {
   from { opacity: 1; }
   to { opacity: 0; }
