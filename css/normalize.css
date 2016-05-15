@@ -48,6 +48,7 @@ summary {
 header {
   position: fixed;
   padding:15px;
+  z-index: 100;
 }
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
