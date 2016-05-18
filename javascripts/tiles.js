@@ -131,10 +131,19 @@
     },
 
     playIntroAnimation: function () {
-      d3.select('.tile').remove();
+      //Resetting the frame style for running animation
       var frame = d3.select('.frame');
-      var frameParent = frame.node().parentNode;
-      frameParent.replaceChild(frame.node(), frame.node());
+      frame.style({
+        height: "300px",
+            overflow:"visible",
+            "border-radius": ""
+      })
+
+      // Remove-then-add back to re-run CSS animation associated with frame.
+      frame.classed("frame", false);
+      // Forces a DOM Reflow (recalculation of CSS style and layouts)
+      frame.node().clientWidth;
+      frame.classed("frame", true);
 
       this.unscrambleTiles();
       this.scatterTiles();
@@ -144,17 +153,14 @@
       typedParent.replaceChild(typed.node(), typed.node());
 
       setTimeout(function () {
-        this.remove();
         d3.select('.frame')
-          .append('div')
-          .classed('tile', true)
           .transition().duration(1000)
           .style({
             height: "200px",
-            width: "200px",
+            overflow:"hidden",
             "border-radius": "100px"
           })
-      }.bind(this.tiles), 2000);
+      }, 2000);
     }
   }
 })();
