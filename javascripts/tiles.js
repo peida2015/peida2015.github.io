@@ -21,8 +21,8 @@
 
     scatterTiles: function () {
       this.tiles.style({
-        top: function () { return (Math.random()-0.5)*2000+'px'; },
-        left: function () { return (Math.random()-0.5)*2000+'px'; }
+        top: function () { return (Math.random()-0.5)*1500+'px'; },
+        left: function () { return (Math.random()-0.5)*1500+'px'; }
       })
     },
 
@@ -148,6 +148,8 @@
       this.unscrambleTiles();
       this.scatterTiles();
       this.slowlyReturnToShape();
+
+      // Another way to restart CSS animation: replace-with-itself
       var typed = d3.select('.typed');
       var typedParent = typed.node().parentNode;
       typedParent.replaceChild(typed.node(), typed.node());
