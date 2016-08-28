@@ -13,38 +13,52 @@
     });
   };
 
-  window.addEventListener("scroll", function (e) {
+  window.addEventListener("wheel", function (e) {
 
-    if (window.scrollY > 400 && window.scrollY < 600) {
-      if (window.scrollY < 500) {
-        document.querySelector('a[name=d3pg]').scrollIntoView({behavior:"instant"});
+    var index = document.querySelector('a[name=index]');
+    var d3pg = document.querySelector('a[name=d3pg]');
+    var scitwits = document.querySelector('a[name=scitwits]');
+    var pong = document.querySelector('a[name=pong]');
+    var bio = document.querySelector('a[name=bio]');
+
+    // debugger
+    var indexPos = index.getBoundingClientRect().top;
+    var d3pgPos = d3pg.getBoundingClientRect().top;
+    var scitwitsPos = scitwits.getBoundingClientRect().top;
+    var pongPos = pong.getBoundingClientRect().top;
+    var bioPos = bio.getBoundingClientRect().top;
+
+// debugger
+    if (d3pgPos > 200 && d3pgPos < 300) {
+      if (d3pgPos < 300 && e.deltaY > 0) {
+        d3pg.scrollIntoView({behavior:"instant"});
         highlightButtons(0);
-      } else {
+      } else if (d3pgPos > 200 && e.deltaY < 0) {
         document.querySelector('a[name=index]').scrollIntoView({behavior:"instant"});
         d3.selectAll('.nav-buttons').classed('highlight', false);
       }
-    } else if (window.scrollY > 1000 && window.scrollY < 1200) {
-      if (window.scrollY < 1100) {
-         document.querySelector('a[name=scitwits]').scrollIntoView({behavior:"instant"});
+    } else if (scitwitsPos > 200 && scitwitsPos < 300) {
+      if (scitwitsPos < 300 && e.deltaY > 0) {
+         scitwits.scrollIntoView({behavior:"instant"});
          highlightButtons(1);
-      } else {
-         document.querySelector('a[name=d3pg]').scrollIntoView({behavior:"instant"});
+      } else if (scitwitsPos > 200 && e.deltaY < 0) {
+         d3pg.scrollIntoView({behavior:"instant"});
          highlightButtons(0);
       };
-    } else if (window.scrollY > 1600 && window.scrollY < 1800) {
-      if (window.scrollY < 1700) {
-         document.querySelector('a[name=pong]').scrollIntoView({behavior:"instant"});
+    } else if (pongPos > 200 && pongPos < 300) {
+      if (pongPos < 300 && e.deltaY > 0) {
+         pong.scrollIntoView({behavior:"instant"});
          highlightButtons(2)
-       } else {
-         document.querySelector('a[name=scitwits]').scrollIntoView({behavior:"instant"});
+       } else if (pongPos > 200 && e.deltaY < 0) {
+         scitwits.scrollIntoView({behavior:"instant"});
          highlightButtons(1);
        }
-    } else if (window.scrollY > 2300 && window.scrollY < 2500) {
-      if (window.scrollY < 2400) {
-         document.querySelector('a[name=bio]').scrollIntoView({behavior:"instant"});
+    } else if (bioPos > 200 && bioPos < 300) {
+      if (bioPos < 300 && e.deltaY > 0) {
+         bio.scrollIntoView({behavior:"instant"});
          highlightButtons(3);
-       } else {
-         document.querySelector('a[name=pong]').scrollIntoView({behavior:"instant"});
+       } else if (bioPos > 200 && e.deltaY < 0) {
+         pong.scrollIntoView({behavior:"instant"});
          highlightButtons(2);
        }
     }
