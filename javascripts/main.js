@@ -13,7 +13,7 @@
     });
   };
 
-  var slowlyScrollTo = function (pos, dur=1500) {
+  var slowlyScrollTo = function (pos, dur=500) {
     d3.transition().duration(dur)
     .tween('scroll', function () {
       var itp = d3.interpolateNumber(window.scrollY, window.scrollY+pos);
