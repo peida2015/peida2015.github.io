@@ -139,6 +139,28 @@ div.tile {
           animation-iteration-count: 3;
 }
 
+.circles {
+  position: fixed;
+  height: 20px;
+  padding: 20px;
+  margin: auto;
+  bottom: 0px;
+  width: 100%;
+}
+
+.circle {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  border-color: forestgreen;
+  border-width: 1px;
+  background-color: #FFFFFF
+}
+
+
 /* For devices larger than 400px */
 @media (min-width: 400px) {
   .container {
