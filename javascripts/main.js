@@ -3,6 +3,8 @@
 (function () {
   console.log("main.js");
   const buttonLabels = ["D3 Playground", "SciTwits", "Pong", "About Me"];
+  const pages = ["index", "d3pg", "scitwits", "pong", "bio"];
+
   function highlightButtons(buttonNum) {
     d3.selectAll('.nav-buttons').select(function () {
       if (this.textContent === buttonLabels[buttonNum]) {
@@ -23,16 +25,24 @@
 
   window.onload = function () {
     if (document.readyState == "complete") {
-      var navButtons = d3.selectAll('.nav-links div button');
-
-      navButtons.on('click', function(e) {
+      var clickHandler = function() {
+        // un-highlight all and highlight the button clicked
         navButtons.classed('highlight', false);
+        circles.classed('highlight', false);
+        // multiple selectors to select both circle and nav-button
+        d3.selectAll(`div.circle[name=${this.getAttribute("name")}],
+        button[name=${this.getAttribute("name")}]`).classed('highlight', true);
 
-        // un-highlight all and highlight the button clicked;
-        this.classList.add("highlight");
-        let leftPos = d3.select(`a[name=${this.name}]`).property('offsetLeft');
-        slowlyScrollTo(leftPos)
-      })
+        // find and scroll to the correct position
+        let leftPos = d3.select(`a[name=${this.getAttribute("name")}]`).property('offsetLeft');
+        slowlyScrollTo(leftPos);
+      }
+
+      var navButtons = d3.selectAll('.nav-links div button');
+      navButtons.on('click', clickHandler);
+
+      var circles = d3.selectAll('.circle');
+      circles.on('click', clickHandler);
     }
   }
 

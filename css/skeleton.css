@@ -35,7 +35,7 @@ body {
 .page {
   width: 98vw;
   height: 70vh;
-  padding-top: calc(40px + 2%);
+  padding-top: calc(40px + 1%);
 }
 
 .horizontal-scroll {
@@ -176,8 +176,14 @@ div.button-wrap {
   color: #1EAEDB;
   padding-left: 30px;
 }
+
 div.button-wrap:hover {
   color: #0FA0CE;
+}
+
+/* highlight selected page's button or circle */
+.highlight {
+  background-color: skyblue;
 }
 
 
@@ -382,9 +388,7 @@ button.nav-buttons {
   padding: 0px 5px 0px 5px;
   margin: 0px -0px 0px -30px;
 }
-button.nav-buttons.highlight {
-  background-color: skyblue;
-}
+
 button.like {
   border-radius: 30px;
   padding: 0px 10px 0px 10px;
