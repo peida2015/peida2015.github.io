@@ -35,7 +35,8 @@ body {
 .page {
   width: 98vw;
   height: 70vh;
-  padding-top: calc(40px + 1%);
+  /* Firefox doesn't take % well in calc. (Temporary bug?) Use vh instead of % */
+  padding-top: calc(40px + 2vh);
 }
 
 .horizontal-scroll {
