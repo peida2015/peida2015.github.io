@@ -28,12 +28,23 @@
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+body {
+  overflow-x: hidden;
+}
 
 .page {
   width: 98vw;
-  height: 98vh;
-  padding-top: 40px;
+  height: 70vh;
+  padding-top: calc(40px + 2%);
 }
+
+.horizontal-scroll {
+  /* width should equal to #of pages * 100% */
+  width: 500%;
+  display: flex;
+}
+
+
 .container {
   position: relative;
   width: 100%;
@@ -159,6 +170,16 @@ div.tile {
   border-width: 1px;
   background-color: #FFFFFF
 }
+
+div.button-wrap {
+  display: inline;
+  color: #1EAEDB;
+  padding-left: 30px;
+}
+div.button-wrap:hover {
+  color: #0FA0CE;
+}
+
 
 
 /* For devices larger than 400px */
