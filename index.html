@@ -38,30 +38,47 @@
 
   <!-- header ------------------>
   <header class="header-filler"></header>
-  <header class="outside-links">
-    <a class="icon" href="http://linkedin.com/in/peida-kuo-824b5b54"><i class="fa fa-linkedin fa-2x"></i></a>
-    <a class="icon" href="http://github.com/peida2015"><i class="fa fa-github fa-2x"></i></a>
-    <a class="icon" href="Resume.pdf"><i class="fa fa-file-text fa-2x"></i></a>
-  </header>
-  <header class="nav-links">
-    <div class="button-wrap">
-      <button type="button" name="d3pg" class="nav-buttons">D3 Playground</button>
+  <header>
+      <!-- social media links and resume -->
+    <div class="outside-links">
+      <a class="icon" href="http://linkedin.com/in/peida-kuo-824b5b54"><i class="fa fa-linkedin fa-2x"></i></a>
+      <a class="icon" href="http://github.com/peida2015"><i class="fa fa-github fa-2x"></i></a>
+      <a class="icon" href="Resume.pdf"><i class="fa fa-file-text fa-2x"></i></a>
     </div>
-    <div class="button-wrap">
-      <button type="button" name="scitwits" class="nav-buttons">SciTwits</button>
+      <!-- social media links and resume END -->
+
+      <!-- nav-links -->
+    <div class="nav-links">
+      <div class="button-wrap">
+        <button type="button" name="d3pg" class="nav-buttons">D3 Playground</button>
+      </div>
+      <div class="button-wrap">
+        <button type="button" name="scitwits" class="nav-buttons">SciTwits</button>
+      </div>
+      <div class="button-wrap">
+        <button type="button" name="pong" class="nav-buttons">Pong</button>
+      </div>
+      <div class="button-wrap">
+        <button type="button" name="bio" class="nav-buttons">About Me</button>
+      </div>
     </div>
-    <div class="button-wrap">
-      <button type="button" name="pong" class="nav-buttons">Pong</button>
+      <!-- nav-links END -->
+
+      <!-- circles for navigation -->
+    <div class="circles">
+      <div class="circle highlight" name="index"></div>
+      <div class="circle" name="d3pg"></div>
+      <div class="circle" name="scitwits"></div>
+      <div class="circle" name="pong"></div>
+      <div class="circle" name="bio"></div>
     </div>
-    <div class="button-wrap">
-      <button type="button" name="bio" class="nav-buttons">About Me</button>
-    </div>
+      <!-- circles for navigation END -->
   </header>
   <!-- header END ------------------->
 
 
-  <a name='index'></a>
   <div class="horizontal-scroll">
+    <a name='index' class="pointer"></a>
     <div class="page center-align">
       <button class="like" type="button" name="button">Liked it?</button>
       <div class="header-filler"></div>
@@ -83,18 +100,11 @@
         <img src="./images/react-logo.png" class="contrast grayscale brightness stack-icon" alt="" />
       </div>
       </br>
-      <div class="circles">
-        <div class="circle highlight" name="index"></div>
-        <div class="circle" name="d3pg"></div>
-        <div class="circle" name="scitwits"></div>
-        <div class="circle" name="pong"></div>
-        <div class="circle" name="bio"></div>
-      </div>
 
     </div>
 
     <!-- D3Playground ---------------->
-  <a name='d3pg'></a>
+  <a name='d3pg' class="pointer"></a>
   <div class="page center-align">
     <div class="container">
       <div class="header-filler">
@@ -115,7 +125,7 @@
 
 
     <!-- SciTwits ---------------->
-  <a name='scitwits'></a>
+  <a name='scitwits' class="pointer"></a>
   <div class="page center-align">
     <div class="container">
       <div class="header-filler">
@@ -130,12 +140,14 @@
         <a class="icon" href="https://github.com/peida2015/SciTwits.git"><i class="fa fa-github fa-2x"></i></a>
       </div>
       </div>
+      <br/>
+      <br/>
     </div>
 
   </div>
 
   <!-- Pong ---------------->
-  <a name='pong'></a>
+  <a name='pong' class="pointer"></a>
   <div class="page center-align">
     <div class="container">
       <div class="header-filler">
@@ -157,7 +169,7 @@
   </div>
 
   <!-- About Me ---------------->
-  <a name='bio'></a>
+  <a name='bio' class="pointer"></a>
   <div class="page center-align">
     <div class="container">
       <div class="header-filler">

@@ -36,7 +36,7 @@ body {
   width: 98vw;
   height: 70vh;
   /* Firefox doesn't take % well in calc. (Temporary bug?) Use vh instead of % */
-  padding-top: calc(40px + 2vh);
+  padding-top: calc(40px + 4vh);
 }
 
 .horizontal-scroll {
@@ -55,18 +55,36 @@ body {
   padding: 0 20px;
   box-sizing: border-box; }
 
-header.nav-links {
-  right:0px;
-}
-header.header-filler {
+div.nav-links {
+  /*float: right;*/
   position: fixed;
-  background-color: #ddd;
-  opacity: 0.6;
+  display: none;
+  right: 15px;
 }
-.header-filler {
-  width: 100%;
-  height: 40px;
+
+div.outside-links {
+  /*float: left;*/
+  position: fixed;
+  display: inline;
+  vertical-align: bottom;
 }
+
+
+@media (min-width: 550px) {
+  header.header-filler {
+    position: fixed;
+    background-color: #ddd;
+    opacity: 0.6;
+  }
+  .header-filler {
+    width: 100%;
+    height: 40px;
+  }
+  div.nav-links {
+    display: inline;
+  }
+}
+
 .bottom-filler {
   position: absolute;
   /*height 100%;*/
@@ -103,7 +121,7 @@ img.portrait {
   display: none;
 }
 img.screenshot {
-  max-width: 500px;
+  max-width: 70vw;
 }
 img.arrow {
    width: 20px;
@@ -157,7 +175,8 @@ div.tile {
   padding: 20px;
   margin: auto;
   bottom: 0px;
-  width: 100%;
+  width: 90vw;
+  text-align: center;
 }
 
 .circle {
@@ -316,10 +335,11 @@ p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: #1EAEDB;
-  padding-left: 30px;
 }
+
 a:hover {
-  color: #0FA0CE; }
+  color: #0FA0CE;
+}
 
 
 /* Buttons
