@@ -121,7 +121,7 @@ img.portrait {
   display: none;
 }
 img.screenshot {
-  max-width: 70vw;
+  max-width: 80%;
 }
 img.arrow {
    width: 20px;
