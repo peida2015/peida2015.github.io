@@ -29,17 +29,22 @@
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 body {
-  overflow-x: hidden;
+  width: 98vw;
 }
 
 .page {
   width: 98vw;
-  height: 70vh;
+  height: 80vh;
   /* Firefox doesn't take % well in calc. (Temporary bug?) Use vh instead of % */
-  padding-top: calc(40px + 4vh);
+  padding-top: 4vh;
+  overflow: auto;
 }
 
-.horizontal-scroll {
+div.scroll-wrap {
+  overflow-x: hidden;
+}
+
+div.horizontal-scroll {
   /* width should equal to #of pages * 100% */
   width: 500%;
   display: flex;
@@ -56,23 +61,28 @@ body {
   box-sizing: border-box; }
 
 div.nav-links {
-  /*float: right;*/
-  position: fixed;
+  float: right;
+  position: relative;
   display: none;
-  right: 15px;
+  /* To account for slight lowered button appearance within header */
+  margin-top: -3px;
 }
 
 div.outside-links {
-  /*float: left;*/
-  position: fixed;
+  position: relative;
   display: inline;
-  vertical-align: bottom;
+  vertical-align: sub;
 }
 
+div.header {
+  padding: 15px;
+  background-color: rgba(221, 221, 221, 0.6);
+  width: calc(100vw - 30px);
+}
 
 @media (min-width: 550px) {
   header.header-filler {
-    position: fixed;
+    position: relative;
     background-color: #ddd;
     opacity: 0.6;
   }
@@ -170,12 +180,12 @@ div.tile {
 }
 
 .circles {
-  position: fixed;
+  position: absolute;
   height: 20px;
-  padding: 20px;
+  padding: 2%;
   margin: auto;
   bottom: 0px;
-  width: 90vw;
+  width: calc(100vw - 4%);
   text-align: center;
 }
 
@@ -294,7 +304,7 @@ body {
   font-family: 'Slabo', serif, FontAwesome;
   color: #222;
   background: #E6E6FA;
-  height:100%
+  height: 100%;
 }
 
 
