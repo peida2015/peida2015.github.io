@@ -18,8 +18,10 @@
   var slowlyScrollTo = function (pos, dur=500) {
     d3.transition().duration(dur)
       .tween('scroll', function () {
-        var itp = d3.interpolateNumber(window.pageXOffset, pos);
-        return function (t) { window.scrollTo(itp(t), 0) }
+        var wrap = d3.select('.scroll-wrap').node();
+        var itp = d3.interpolateNumber(wrap.scrollLeft, pos);
+
+        return function (t) { wrap.scrollTo(itp(t), 0) }
       })
   }
 
