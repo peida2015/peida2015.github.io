@@ -34,7 +34,7 @@ body {
 
 .page {
   width: 98vw;
-  height: 80vh;
+  height: 86vh;
   /* Firefox doesn't take % well in calc. (Temporary bug?) Use vh instead of % */
   padding-top: 4vh;
   overflow: auto;
@@ -81,22 +81,17 @@ div.outside-links {
 }
 
 div.header {
-  padding: 15px;
+  padding: 4px 15px;
   /* use rgba to allow opacity setting without affecting other elements contained within it */
   background-color: rgba(221, 221, 221, 0.6);
   width: calc(100vw - 30px);
 }
 
 @media (min-width: 550px) {
-  header.header-filler {
-    position: relative;
-    background-color: #ddd;
-    opacity: 0.6;
+  div.header {
+    padding: 10px 15px;
   }
-  .header-filler {
-    width: 100%;
-    height: 40px;
-  }
+
   div.nav-links {
     display: inline;
   }
@@ -188,7 +183,7 @@ div.tile {
 .circles {
   position: absolute;
   height: 20px;
-  padding: 2%;
+  padding: 1%;
   margin: auto;
   bottom: 0px;
   width: calc(100vw - 4%);
@@ -197,8 +192,8 @@ div.tile {
 
 .circle {
   display: inline-block;
-  height: 20px;
-  width: 20px;
+  height: 14px;
+  width: 14px;
   border-radius: 10px;
   border-color: black;
   border-style: solid;
