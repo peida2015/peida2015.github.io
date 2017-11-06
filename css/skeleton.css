@@ -40,12 +40,19 @@ body {
   overflow: auto;
 }
 
+/* Hidden scrollbar to allow scrolling */
 div.scroll-wrap {
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+div.hidden-scrollbar {
+  overflow-x: scroll;
+  /* hide scrollbar under the scroll-wrap */
+  margin-bottom: -15px;
 }
 
 div.horizontal-scroll {
-  /* width should equal to #of pages * 100% */
+  /* width should equal to #of pages x 100% */
   width: 500%;
   display: flex;
 }
@@ -54,7 +61,6 @@ div.horizontal-scroll {
 .container {
   position: relative;
   width: 100%;
-  /*min-height: 100%;*/
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
@@ -76,6 +82,7 @@ div.outside-links {
 
 div.header {
   padding: 15px;
+  /* use rgba to allow opacity setting without affecting other elements contained within it */
   background-color: rgba(221, 221, 221, 0.6);
   width: calc(100vw - 30px);
 }
@@ -120,7 +127,6 @@ div.header {
   margin-right: 15px;
 }
 .frame{
-  /*position:relative;*/
   margin: auto;
   -webkit-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;
      -moz-animation: roll-in 1s linear, jump 100ms ease-in-out 1s;

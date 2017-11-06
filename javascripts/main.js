@@ -18,7 +18,7 @@
   var slowlyScrollTo = function (pos, dur=500) {
     d3.transition().duration(dur)
       .tween('scroll', function () {
-        var wrap = d3.select('.scroll-wrap').node();
+        var wrap = d3.select('.hidden-scrollbar').node();
         var itp = d3.interpolateNumber(wrap.scrollLeft, pos);
 
         return function (t) { wrap.scrollTo(itp(t), 0) }
